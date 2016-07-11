@@ -97,6 +97,7 @@ $(function() {
     	mao.push(newH);
     	maoBiao[newH.x + '-' +newH.y] = true;
     	$('#' + newH.x + '-' + newH.y).addClass('mao');
+       $('.kai span').text(mao.length-2);
 
     	if(newH.y > 19 || newH.y < 0 || newH.x < 0 || newH.x >19) {
     	  $('.tishi').attr('style','display:block').text('啊哦，要再来一次嘛');

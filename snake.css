@@ -95,13 +95,13 @@ body{
     top:120px;
     left:2px;
     font-family:"微软雅黑";
-    font-size:60px;
-    line-height:230px;
+    font-size:50px;
+    line-height:320px;
     text-align:center;
     cursor:pointer;
-    color:#fff;
 }
-.kai:hover{
+.kai span{
+    font-size:30px;
     color:pink;
 }
 .zan{
