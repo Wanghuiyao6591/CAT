@@ -87,6 +87,42 @@ body{
     margin:auto;
     border:8px solid #fff;
 }
+.kai{
+    width:160px;
+    height:230px;
+    border-radius:10px;
+    position: absolute;
+    top:120px;
+    left:2px;
+    font-family:"微软雅黑";
+    font-size:60px;
+    line-height:230px;
+    text-align:center;
+    cursor:pointer;
+    color:#fff;
+}
+.kai:hover{
+    color:pink;
+}
+.zan{
+    width:240px;
+    height:230px;
+    border-radius:10px;
+    position: absolute;
+    top:80px;
+    right:2px;
+    font-family:"微软雅黑";
+    font-size:60px;
+    line-height:230px;
+    text-align:center;
+    color:#f2f2f2;
+    cursor:pointer;
+    transition:font-size 0.3s ease;
+}
+.zan:hover{
+    color:pink;
+    font-size:68px;
+}
 .changjing .block{
     width: 30px;
     height: 30px;

@@ -6,6 +6,18 @@ $(function() {
   $('.play').on('click',function(){
     $('.play.kaishi').attr('style','display:none');
     start();
+    $('.zan').on('click',function(e){
+      e.preventDefault();
+      if($('.zan').text()=='继续'){
+        $('.tishi').attr('style','display:none');
+        start();
+        $('.zan').text('暂停');
+      }else{
+        pause();
+        $('.tishi').attr('style','display:block').text('休息一下等你回来');
+        $('.zan').text('继续');
+      }
+    })
   })
 	//画场景  规划坐标
   	for (var i = 0; i < 20; i++) {
@@ -87,7 +99,7 @@ $(function() {
     	$('#' + newH.x + '-' + newH.y).addClass('mao');
 
     	if(newH.y > 19 || newH.y < 0 || newH.x < 0 || newH.x >19) {
-    	  $('.tishi').attr('style','display:block');
+    	  $('.tishi').attr('style','display:block').text('啊哦，要再来一次嘛');
     		pause();
     		return;
     	}
