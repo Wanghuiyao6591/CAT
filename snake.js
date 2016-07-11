@@ -1,10 +1,9 @@
 $(function() {
-
   $('.start1').addClass('kaishi',function(){
   })
   $('.play').addClass('kaishi',function(){
   })
-  $('.play.kaishi').on('click',function(){
+  $('.play').on('click',function(){
     $('.play.kaishi').attr('style','display:none');
     start();
   })
@@ -17,7 +16,6 @@ $(function() {
       		.appendTo('.changjing');
     	}
   	}
-  
   	//数据
   	var mao = [
   		{x: 0,y: 0} 
@@ -55,9 +53,6 @@ $(function() {
     	};
   	}
   	var shu = fangshiwu();
-  	
-  	
-  	
   
   	//移动
   	fangxiang = 'right';
@@ -92,16 +87,10 @@ $(function() {
     	$('#' + newH.x + '-' + newH.y).addClass('mao');
 
     	if(newH.y > 19 || newH.y < 0 || newH.x < 0 || newH.x >19) {
-    	  // $('.tishi').attr('style','display:block');
-        alert('啊哦，要再来一次嘛')
+    	  $('.tishi').attr('style','display:block');
     		pause();
     		return;
     	}
-    	// if() {
-    	// 	alert("撞到自己啦！");
-    	// 	pause();
-    	// 	return;
-    	// }
     
     	if (newH.x === shu.x && newH.y === shu.y) {
       		$('#' + shu.x + '-' + shu.y).removeClass('shu');
@@ -113,21 +102,19 @@ $(function() {
     	}
   	}
 
-  	$(document).on('keyup', function(e) {
+
+  	$(document).on('keydown',function(e){
   		e.preventDefault();
-  		$(document).on('keydown',function(e){
-  			e.preventDefault();
-  			var biao={
-  				'left':37,
-  				'right':39,
-  				'up':38,
-  				'down':40,
-  			}
-  			if(Math.abs(e.keyCode-biao[fangxiang])===2){
-  				return;
-  			}
-  		})
-    	if (e.keyCode === 37) {
+  		var biao={
+  			'left':37,
+  			'right':39,
+  			'up':38,
+  			'down':40,
+  		}
+  		if(Math.abs(e.keyCode-biao[fangxiang])===2){
+  			return;
+  		}
+  		if (e.keyCode === 37) {
       		fangxiang = 'left';
     	}
     	if (e.keyCode === 39) {
@@ -139,7 +126,8 @@ $(function() {
     	if (e.keyCode === 40) {
      		fangxiang = 'down';
     	}
-  	});
+  	})
+    	
 
   	//开始
   	var timeID;
@@ -152,7 +140,6 @@ $(function() {
   	}
     $('.tishi').on('click',function(){
       $('.tishi').attr('style','display:none');
-      start();
-      return;
+      location.reload();
     })
 })
