@@ -17,7 +17,7 @@
 .play{
     width:0px;
     height:0px;
-    z-index:2;
+    z-index:1;
     position: absolute;
     top:240px;
     left:580px;

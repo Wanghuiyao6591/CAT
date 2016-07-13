@@ -1,4 +1,5 @@
 $(function() {
+
   $('.start1').addClass('kaishi',function(){
   })
   $('.play').addClass('kaishi',function(){
